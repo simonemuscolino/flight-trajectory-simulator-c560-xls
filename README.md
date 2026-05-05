@@ -17,7 +17,7 @@ The workflow replicates a **real aerospace engineering pipeline**, moving from t
 
 ---
 
-## 🎯 Objectives
+##  Objectives
 
 - Compute **aircraft trim conditions** under different flight regimes  
 - Analyze **aerodynamic performance vs altitude and Mach number**  
@@ -27,7 +27,7 @@ The workflow replicates a **real aerospace engineering pipeline**, moving from t
 
 ---
 
-## 🧠 Project Architecture
+##  Project Architecture
 
 
 MATLAB Scripts → Trim Conditions → Simulink Model → Dynamic Simulation
@@ -109,11 +109,11 @@ simulatore.slx
 
 ---
 
-## 🧪 MATLAB Numerical Simulation
+##  MATLAB Numerical Simulation
 
 The MATLAB environment is used to model the aircraft and compute trim conditions.
 
-### 🔹 Key Features
+###  Key Features
 
 - Lift coefficient interpolation from experimental data  
 - Iterative trim algorithm  
@@ -123,7 +123,7 @@ The MATLAB environment is used to model the aircraft and compute trim conditions
 
 ---
 
-### 📈 Lift Curve (Cl vs α)
+###  Lift Curve (Cl vs α)
 
 ![CL vs Alpha](cl_alpha_curve.png)
 
@@ -131,7 +131,7 @@ This curve is used for interpolation during the trim computation process.
 
 ---
 
-### 📊 Performance Results
+###  Performance Results
 
 #### γ̇ (Flight Path Angle Rate) vs Altitude
 
@@ -145,7 +145,7 @@ This curve is used for interpolation during the trim computation process.
 
 ---
 
-## ⚙️ Trim Algorithm
+##  Trim Algorithm
 
 The trim condition is computed iteratively by solving:
 
@@ -161,7 +161,7 @@ The algorithm converges using:
 
 ---
 
-## 🌀 Parametric Analysis
+##  Parametric Analysis
 
 Two configurations are tested:
 
@@ -179,13 +179,13 @@ This allows evaluation of:
 
 ---
 
-## 🖥️ Simulink Dynamic Simulation
+##  Simulink Dynamic Simulation
 
 A full **dynamic flight model** is implemented in Simulink using trim conditions computed in MATLAB.
 
 ![Simulink](simulink_structure.png)
 
-### 🔹 Features
+###  Features
 
 - Time-domain simulation  
 - Aircraft longitudinal dynamics  
@@ -194,11 +194,11 @@ A full **dynamic flight model** is implemented in Simulink using trim conditions
 
 ---
 
-## 🎮 Real Flight Simulator Data Integration
+##  Real Flight Simulator Data Integration
 
 This project includes **real data from a university flight simulator**.
 
-### 🔹 Purpose
+###  Purpose
 
 - Validate theoretical models  
 - Compare simulated vs real behavior  
@@ -206,7 +206,7 @@ This project includes **real data from a university flight simulator**.
 
 ---
 
-## 📋 Flight Test Card
+##  Flight Test Card
 
 The flight test card summarizes:
 
@@ -215,7 +215,6 @@ The flight test card summarizes:
 - Performance checkpoints  
 
 ---
-
 
 ### Test Objectives
 - Evaluate aircraft performance as a function of:
