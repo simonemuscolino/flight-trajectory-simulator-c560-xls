@@ -1,0 +1,35 @@
+% aircraft: XLS
+
+   MTOW=     9163;%kg max TO mass                %In realtà MTOM
+   MFC=      (2144+2122)*0.4535;%kg fuel mass    %E'la massa di carburante massima
+   
+   num_of_engines=2;
+   
+   wing_area=34.4; %m^2
+   wing_span=17.17;
+
+ThrustSimpleModelCoeff=1.4236;                  %Sarbbe l'esponente nt
+Thrust_sl = 18.32*1e3;                          %sl=Sea level
+Thrust_Idle_Treshold_coeff=0.015; % N           %E' il minimo di manetta, che non può arrivare a 0 altrimenti si spegnerebbero i motori
+
+SFC=0.44*0.45/(0.45*9.81/1000*3600); %kg/s/kN in cruising condition
+
+%clean:
+  cd0_clean=0.01;  
+  e=0.9;
+
+%
+X_pos0=0;                           %posizione all'istante iniziale nella terna Nord Est Down
+Y_pos0=0;                           %Idem sopra
+
+PSI_0=0*pi/180; %North East Down                   %Valore dell'angolo di rotta all'inizio della simulazione
+height_trim=3000/3.28084;%1000;%12360;%m           %Altezza di trimmaggio mi serve come condiz iniziale nell'equazione in Z punto earth
+
+phi_trim=0*pi/180;                    %E' il val iniziale del bank che per noi è un input, diciamo che inizia con ala livellata
+gamma_trim=0*pi/180;                  %All'inizio della simulaz. sono in volo rettilineo uniforme orizzontale
+
+
+Throttle_trim = 0.14854              %E' la manetta in condizioni di equilibrio         
+Theta_trim    = -1.3578              %E' il val inizialle dell'altro input cioè il beccheggio; gli altri input sono la manetta e l'angolo di bank
+gamma_trim    = 0 
+V_trim        = 143.1257            %E' la velocità che mi assicura l'equilibrio, è condiz iniziale per V punto
