@@ -125,7 +125,7 @@ The MATLAB environment is used to model the aircraft and compute trim conditions
 
 ### 📈 Lift Curve (Cl vs α)
 
-(images/cl_alpha_curve.png)
+![CL vs Alpha](cl_alpha_curve.png)
 
 This curve is used for interpolation during the trim computation process.
 
@@ -136,8 +136,8 @@ This curve is used for interpolation during the trim computation process.
 #### γ̇ (Flight Path Angle Rate) vs Altitude
 
 <p align="center">
-  <img src="images/gamma_dot_vs_altitude.png" width="45%" />
-  <img src="images/velocity_dot_vs_altitude.png" width="45%" />
+  <img src="!(gamma_dot_vs_altitude.png)" width="45%" />
+  <img src="!(velocity_dot_vs_altitude.png)" width="45%" />
 </p>
 
 - Evaluates **flight stability**
@@ -183,6 +183,8 @@ This allows evaluation of:
 ## 🖥️ Simulink Dynamic Simulation
 
 A full **dynamic flight model** is implemented in Simulink using trim conditions computed in MATLAB.
+
+![Simulink](simulink_structure.png)
 
 ### 🔹 Features
 
