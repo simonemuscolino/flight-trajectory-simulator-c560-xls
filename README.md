@@ -125,7 +125,7 @@ The MATLAB environment is used to model the aircraft and compute trim conditions
 
 ### 📈 Lift Curve (Cl vs α)
 
-![CL vs Alpha](images/cl_alpha_curve.png)
+(images/cl_alpha_curve.png)
 
 This curve is used for interpolation during the trim computation process.
 
