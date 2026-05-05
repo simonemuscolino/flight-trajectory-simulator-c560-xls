@@ -135,10 +135,9 @@ This curve is used for interpolation during the trim computation process.
 
 #### γ̇ (Flight Path Angle Rate) vs Altitude
 
-<p align="center">
-  <img src="!(gamma_dot_vs_altitude.png)" width="45%" />
-  <img src="!(velocity_dot_vs_altitude.png)" width="45%" />
-</p>
+
+  ![](gamma_dot_vs_altitude.png)
+  ![](velocity_dot_vs_altitude.png)
 
 - Evaluates **flight stability**
 - Verifies **trim convergence**
