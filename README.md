@@ -1,41 +1,40 @@
 # Flight Trajectory Simulator – Cessna Citation C560 XLS
+### Advanced Aircraft Trim & Performance Analysis (MATLAB + Simulink)
 
 ## Overview
 
 This project presents a MATLAB and Simulink-based workflow for **flight performance analysis, trim computation, and validation** of a business jet aircraft, specifically the **Cessna Citation C560 XLS**.
 
-The objective is to simulate and analyze aircraft behavior under different flight conditions by varying key parameters such as:
-- Altitude
-- Mach number
-- Oswald efficiency factor
-- Bank angle (φ)
+This project presents a **comprehensive flight trajectory simulation framework** combining:
 
-The project combines **aerodynamic modeling, atmospheric physics, and numerical iteration methods** to compute lift, drag, thrust, and dynamic flight variables.
+- **Aerodynamic modeling**
+- **Aircraft trim computation**
+- **Performance validation**
+- **Dynamic simulation (Simulink)**
+- **Real flight simulator data integration**
+
+The workflow replicates a **real aerospace engineering pipeline**, moving from theoretical modeling to dynamic simulation and validation.
+
+---
+
+## 🎯 Objectives
+
+- Compute **aircraft trim conditions** under different flight regimes  
+- Analyze **aerodynamic performance vs altitude and Mach number**  
+- Validate results through **parametric studies**  
+- Simulate aircraft dynamics using **Simulink models**  
+- Compare results with **real simulator datasets**
 
 ---
 
-## Project Structure
-flight-trajectory-simulator-c560-xls/
-├── matlab/
-│ ├── cl_alpha.m
-│ ├── verifica_validazione.m
-│ ├── cambio_performance.m
-│ ├── simulazione_trimmaggio.m
-├── simulink/
-│ └── simulatore.slx
-├── data/
-│ ├── DatiSim/
-│ └── ext_nl_CLalfa_XLS.dat
-├── docs/
-│ └── FLIGHT_TEST_CARD.pdf
-├── figures/
-│ ├── cl_alpha.png
-│ ├── validation_results.png
-│ └── trim_conditions.png
-├── README.md
-└── .gitignore
+## 🧠 Project Architecture
 
----
+
+MATLAB Scripts → Trim Conditions → Simulink Model → Dynamic Simulation
+↓
+Aerodynamic Data (Cl-α)
+↓
+Real Simulator Data (Validation)
 
 ## Workflow
 
@@ -110,9 +109,112 @@ simulatore.slx
 
 ---
 
-## Flight Test Card
+## 🧪 MATLAB Numerical Simulation
 
-The project includes a **Flight Test Card (FTC-001)** used to define and document the validation process.
+The MATLAB environment is used to model the aircraft and compute trim conditions.
+
+### 🔹 Key Features
+
+- Lift coefficient interpolation from experimental data  
+- Iterative trim algorithm  
+- Atmospheric model (ISA)  
+- Aerodynamic drag modeling  
+- Multi-condition performance analysis  
+
+---
+
+### 📈 Lift Curve (Cl vs α)
+
+![CL vs Alpha](images/cl_alpha_curve.png)
+
+This curve is used for interpolation during the trim computation process.
+
+---
+
+### 📊 Performance Results
+
+#### γ̇ (Flight Path Angle Rate) vs Altitude
+
+<p align="center">
+  <img src="images/gamma_dot_vs_altitude.png" width="45%" />
+  <img src="images/velocity_dot_vs_altitude.png" width="45%" />
+</p>
+
+- Evaluates **flight stability**
+- Verifies **trim convergence**
+- Highlights performance variation with altitude
+
+---
+
+## ⚙️ Trim Algorithm
+
+The trim condition is computed iteratively by solving:
+
+- Lift equilibrium  
+- Drag balance  
+- Thrust requirement  
+
+The algorithm converges using:
+
+- Interpolation of aerodynamic coefficients  
+- Constraint bounding (Cl limits)  
+- Iterative refinement of angle of attack  
+
+---
+
+## 🌀 Parametric Analysis
+
+Two configurations are tested:
+
+### 1. Straight Flight
+- Bank angle: φ = 0°
+
+### 2. Banked Flight
+- Bank angle: φ ≠ 0°
+
+This allows evaluation of:
+
+- Load factor variation  
+- Required thrust changes  
+- Stability differences  
+
+---
+
+## 🖥️ Simulink Dynamic Simulation
+
+A full **dynamic flight model** is implemented in Simulink using trim conditions computed in MATLAB.
+
+### 🔹 Features
+
+- Time-domain simulation  
+- Aircraft longitudinal dynamics  
+- Thrust and aerodynamic coupling  
+- Response to perturbations  
+
+---
+
+## 🎮 Real Flight Simulator Data Integration
+
+This project includes **real data from a university flight simulator**.
+
+### 🔹 Purpose
+
+- Validate theoretical models  
+- Compare simulated vs real behavior  
+- Improve model credibility  
+
+---
+
+## 📋 Flight Test Card
+
+The flight test card summarizes:
+
+- Test conditions  
+- Validation scenarios  
+- Performance checkpoints  
+
+---
+
 
 ### Test Objectives
 - Evaluate aircraft performance as a function of:
@@ -174,19 +276,6 @@ These assumptions make the model suitable for **educational and preliminary anal
 - Numerical methods (iterative solvers)
 - Aerodynamic interpolation
 - Standard atmosphere modeling
-
----
-
-## How to Run
-
-1. Open MATLAB
-2. Set the project root as working directory
-3. Run scripts in order:
-   - `cl_alpha.m`
-   - `verifica_validazione.m`
-   - `cambio_performance.m`
-   - `simulazione_trimmaggio.m`
-4. Open and run the Simulink model
 
 ---
 
